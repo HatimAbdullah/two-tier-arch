@@ -1,0 +1,13 @@
+[Unit]
+Description=Spark service
+StartLimitIntervalSec=500
+StartLimitBurst=30
+
+[Service]
+Restart=on-failure
+RestartSec=20s
+
+ExecStart=/home/ubuntu/run-time.sh
+
+[Install]
+WantedBy=multi-user.target

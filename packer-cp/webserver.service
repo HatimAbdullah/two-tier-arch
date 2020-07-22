@@ -1,0 +1,15 @@
+[Unit]
+Description=god don't exsist
+After=docker.service
+Requires=docker.service
+ 
+[Service]
+TimeoutStartSec=0
+ExecStart=/usr/bin/docker start -a hola
+Restart=always
+RestartSec=10s
+Type=notify
+NotifyAccess=all
+ 
+[Install]
+WantedBy=multi-user.target
